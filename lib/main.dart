@@ -6,8 +6,10 @@ import 'login_page.dart';
 void main()=>runApp(MaterialApp(
       initialRoute: '/',
       routes: {
-        '/': (context) =>  MyApp(),
-        '/categories': (context) => const Categories()
+        /*'/': (context) =>  const Loading(),*/
+        /*'/': (context) =>  MyApp(),*/
+        '/': (context) =>  Categories(),
+        /*'/categories': (context) => const Categories()*/
     },
   )
 );
