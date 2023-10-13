@@ -5,23 +5,24 @@ class BurgersPage extends StatelessWidget {
   BurgersPage({super.key});
 
   List<item> burgers = [
-    item(name: 'Classic Hamburger'),
-    item(name: 'CheeseBurger'),
-    item(name: 'Bacon CheeseBurger'),
-    item(name: 'Veggie Burger'),
-    item(name: 'Turkey Burger'),
-    item(name: 'Chicken Burger'),
-    item(name: 'BBQ Burger'),
-    item(name: 'Mushroom Swiss Burger'),
-    item(name: 'Guacamole Burger'),
-    item(name: 'Hawaiian Burger'),
-    item(name: 'Black Bean Burger'),
-    item(name: 'Jalapeno Burger'),
-    item(name: 'Teriyaki Burger'),
-    item(name: 'Pesto Burger'),
-    item(name: 'Buffalo Chicken Burger'),
-    item(name: 'Chili Burger'),
-    item(name: 'Portobello Mushroom Burger'),
+  item(name: 'Classic Hamburger', price: 9.99, information: 'A timeless classic with a juicy beef patty and your favorite toppings.'),
+  item(name: 'CheeseBurger', price: 10.99, information: 'A classic burger with your choice of cheese, served with all the fixings.'),
+  item(name: 'Bacon CheeseBurger', price: 11.99, information: 'A cheeseburger topped with crispy bacon for extra flavor.'),
+  item(name: 'Veggie Burger', price: 9.49, information: 'A delicious plant-based patty served with fresh vegetables and condiments.'),
+  item(name: 'Turkey Burger', price: 10.99, information: 'A healthier option with a turkey patty and a variety of toppings.'),
+  item(name: 'Chicken Burger', price: 11.49, information: 'A tasty chicken patty with your choice of toppings and sauces.'),
+  item(name: 'BBQ Burger', price: 11.99, information: 'A burger smothered in BBQ sauce and served with coleslaw.'),
+  item(name: 'Mushroom Swiss Burger', price: 10.99, information: 'A burger topped with sautéed mushrooms and Swiss cheese.'),
+  item(name: 'Guacamole Burger', price: 12.49, information: 'A burger topped with creamy guacamole and fresh salsa.'),
+  item(name: 'Hawaiian Burger', price: 12.99, information: 'A tropical twist with pineapple and teriyaki sauce.'),
+  item(name: 'Black Bean Burger', price: 9.99, information: 'A flavorful vegetarian option with a black bean patty.'),
+  item(name: 'Jalapeno Burger', price: 11.49, information: 'Spicy and bold with jalapeños and pepper jack cheese.'),
+  item(name: 'Teriyaki Burger', price: 12.49, information: 'A burger with sweet teriyaki glaze and grilled pineapple.'),
+  item(name: 'Pesto Burger', price: 11.99, information: 'A burger topped with fresh basil pesto and sun-dried tomatoes.'),
+  item(name: 'Buffalo Chicken Burger', price: 12.99, information: 'A spicy twist with buffalo sauce and blue cheese dressing.'),
+  item(name: 'Chili Burger', price: 11.49, information: 'A hearty burger with chili, cheese, and diced onions.'),
+  item(name: 'Portobello Mushroom Burger', price: 11.99, information: 'A burger topped with grilled portobello mushrooms and Swiss cheese.')
+
   ];
 
   @override
@@ -42,7 +43,17 @@ class BurgersPage extends StatelessWidget {
           return Column(
             children: [
               ListTile(
-                title: Text(item.name),
+                title: Text(
+                  item.name,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                subtitle: Text(
+                  'Price: \$${item.price.toStringAsFixed(2)}\n${item.information}',
+                  style: const TextStyle(fontSize: 12, color: Colors.black),
+                ),
                 trailing: ElevatedButton(
                   onPressed: () {
                     // Handle adding the item to the order
