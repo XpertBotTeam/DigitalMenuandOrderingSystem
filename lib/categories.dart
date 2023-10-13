@@ -45,42 +45,42 @@ class Categories extends StatelessWidget {
                   switch (foodCategories[index].urlPage) {
                     case 'categories/desserts.dart':
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const DessertsPage(),
+                        builder: (context) =>  DessertsPage(),
                       ));
                       break;
                     case 'categories/burgers.dart':
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const BurgersPage(),
+                        builder: (context) =>  BurgersPage(),
                       ));
                       break;
                     case 'categories/appetizers.dart':
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const AppetizersPage(),
+                        builder: (context) =>  AppetizersPage(),
                       ));
                       break;
                     case 'categories/milkshakes.dart':
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const MilkshakesPage(),
+                        builder: (context) =>  MilkshakesPage(),
                       ));
                       break;
                     case 'categories/pizza.dart':
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const PizzaPage(),
+                        builder: (context) =>  PizzaPage(),
                       ));
                       break;
                     case 'categories/plates.dart':
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const PlatesPage(),
+                        builder: (context) =>  PlatesPage(),
                       ));
                       break;
                     case 'categories/sandwiches.dart':
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const SandwichesPage(),
+                        builder: (context) =>  SandwichesPage(),
                       ));
                       break;
                     case 'categories/softdrinks.dart':
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const SoftDrinksPage(),
+                        builder: (context) =>  SoftDrinksPage(),
                       ));
                       break;
                   // Add other cases for different categories
