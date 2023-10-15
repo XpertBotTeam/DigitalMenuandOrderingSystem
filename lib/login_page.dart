@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Digital Ordering Menu'),
+        title: const Text('BORCELLE'),
         centerTitle: true,
         backgroundColor: Colors.red,
       ),
@@ -29,9 +29,17 @@ class MyApp extends StatelessWidget {
                 Image.asset('Assets/food.png', height: 280),
                 const SizedBox(height: 10),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+
                   child: TextFormField(
-                    decoration: const InputDecoration(labelText: 'Email'),
+                    decoration: InputDecoration(
+                        labelText: 'Email',
+                        labelStyle: const TextStyle(fontWeight: FontWeight.w600),
+                        prefixIcon: const Icon(Icons.email),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                       ),
+                    ),
                     controller: emailController,
                     validator: (value) {
                       if (value!.isEmpty) {
@@ -43,10 +51,21 @@ class MyApp extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   child: TextFormField(
                     obscureText: true,
-                    decoration: const InputDecoration(labelText: 'Password', ),
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                      labelStyle: const TextStyle(fontWeight: FontWeight.w600),
+                      prefixIcon: const Icon(Icons.password),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25.0),
+                      ),
+
+
+
+
+                    ),
                     controller: passwordController,
                     validator: (value) {
                       if (value!.isEmpty) {
@@ -64,9 +83,14 @@ class MyApp extends StatelessWidget {
                       onPressed: () {
                         handleLogin(context);
                       },
-                      style: ButtonStyle(
-                        minimumSize: MaterialStateProperty.all(const Size(60, 30)),
-                        backgroundColor: MaterialStateProperty.all(Colors.yellow[800]),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.yellow,
+                        onPrimary: Colors.red,
+                        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
+                        elevation: 8,
                       ),
                       child: const Text('Log In'),
                     ),
@@ -74,9 +98,14 @@ class MyApp extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => const MyForm()));
                       },
-                      style: ButtonStyle(
-                        minimumSize: MaterialStateProperty.all(const Size(60, 30)),
-                        backgroundColor: MaterialStateProperty.all(Colors.red),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.red,
+                        onPrimary: Colors.yellow,
+                        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
+                        elevation: 8,
                       ),
                       child: const Text('Sign Up'),
                     )

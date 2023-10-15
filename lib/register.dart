@@ -206,10 +206,14 @@ class MyForm extends StatefulWidget {
                           _submitForm();
                         }
                       },
-                      style: ButtonStyle(
-                        minimumSize: MaterialStateProperty.all(
-                            const Size(200, 40)),
-                        backgroundColor: MaterialStateProperty.all(Colors.red),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.red,
+                        onPrimary: Colors.yellow,
+                        padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 13),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
+                        elevation: 8,
                       ),
                       child: const Text('Sign Up'),
 
