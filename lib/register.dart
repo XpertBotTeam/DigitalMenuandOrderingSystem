@@ -36,9 +36,23 @@ class MyForm extends StatefulWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 13),
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 27),
                       child: TextFormField(
-                        decoration: const InputDecoration(labelText: 'First Name'),
+                        decoration: InputDecoration(
+                            labelText: 'First Name',
+                            labelStyle: const TextStyle(fontWeight: FontWeight.w600),
+                            prefixIcon: const Icon(Icons.person),
+                            filled: true,
+                            fillColor: Colors.grey[200],
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            //suffixIcon: Icon(Icons.clear),
+                            contentPadding: const EdgeInsets.all(10.0),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                        ),
                         controller: _fnameController,
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -50,9 +64,23 @@ class MyForm extends StatefulWidget {
                     ),
 
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 13),
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 27),
                       child: TextFormField(
-                        decoration: const InputDecoration(labelText: 'Last Name'),
+                        decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+
+                            labelText: 'Last Name',
+                            prefixIcon: const Icon(Icons.person),
+                            filled: true,
+                            fillColor: Colors.grey[200],
+                            labelStyle: const TextStyle(fontWeight: FontWeight.w600),
+                            contentPadding: const EdgeInsets.all(10.0),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                        ),
+                        ),
                         controller: _lnameController,
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -64,9 +92,22 @@ class MyForm extends StatefulWidget {
                     ),
 
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 27),
                       child: TextFormField(
-                        decoration: const InputDecoration(labelText: 'Email'),
+                        decoration: InputDecoration(
+                            labelText: 'Email',
+                            filled: true,
+                            fillColor: Colors.grey[200],
+                            labelStyle: const TextStyle(fontWeight: FontWeight.w600),
+                            prefixIcon: const Icon(Icons.email),
+                            focusedBorder: OutlineInputBorder(
+                               borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            contentPadding: const EdgeInsets.all(10.0),
+                            border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                          ),
+                        ),
                         controller: _emailController,
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -78,9 +119,22 @@ class MyForm extends StatefulWidget {
                     ),
 
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 13),
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 27),
                       child: TextFormField(
-                        decoration: const InputDecoration(labelText: 'Phone'),
+                        decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.grey[200],
+                            labelText: 'Phone',
+                            labelStyle: const TextStyle(fontWeight: FontWeight.w600),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            prefixIcon: const Icon(Icons.phone),
+                            contentPadding: const EdgeInsets.all(10.0),
+                            border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                          ),
+                        ),
                         controller: _phoneController,
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -93,9 +147,22 @@ class MyForm extends StatefulWidget {
                     ),
 
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 13),
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 27),
                       child: TextFormField(
-                        decoration: const InputDecoration(labelText: 'Password'),
+                        decoration: InputDecoration(
+                            labelText: 'Password',
+                            labelStyle: const TextStyle(fontWeight: FontWeight.w600),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            filled: true,
+                            fillColor: Colors.grey[200],
+                            prefixIcon: const Icon(Icons.password_rounded),
+                            contentPadding: const EdgeInsets.all(10.0),
+                            border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                          ),
+                        ),
                         obscureText: true,
                         controller: _passwordController,
                         validator: (value) {
@@ -108,9 +175,22 @@ class MyForm extends StatefulWidget {
                     ),
 
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 40),
                       child: TextFormField(
-                        decoration: const InputDecoration(labelText: 'Address'),
+                        decoration: InputDecoration(
+                            labelText: 'Address',
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            fillColor: Colors.grey[200],
+                            labelStyle: const TextStyle(fontWeight: FontWeight.w600),
+                            prefixIcon: const Icon(Icons.location_on),
+                            contentPadding: const EdgeInsets.all(10.0),
+                            border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                          ),
+                        ),
                         controller: _addressController,
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -162,6 +242,9 @@ void _submitForm() async {
       'address' : address,
     },
   );
+
+
+  print('-------------------------${response.statusCode}---------------------');
 
   if (response.statusCode == 200) {
     // Request was successful
